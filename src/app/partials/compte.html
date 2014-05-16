@@ -1,0 +1,84 @@
+<div ng-controller="CompteController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class = "modal-header">
+            <h3 class = "modal-title"> Confirmation </h3>
+        </div>
+            <div class = "modal-body">
+            Voulez vous vraiment supprimer définitivement votre compte ?
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class = "btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <form name="formCompte" class="container-fluid panel panel-default" role="form">
+
+        <div class="panel-heading">Détails du compte</div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Pseudo
+                        <input type="text" class="form-control" ng-model="pseudo" style="width:300px">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Nom
+                        <input type="text" class="form-control" ng-model="nom" style="width:300px">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Prénom
+                        <input type="text" class="form-control" ng-model="prenom" style="width:300px">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Mail
+                        <input type="text" class="form-control" ng-model="mail" style="width:300px">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Mot de passe
+                        <input type="text" class="form-control" ng-model="mdp" style="width:300px">
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div>Avatar</div>
+                        <input type="file" class="fileupload" ng-file-select="onFileSelect($files)">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" ng-click="validerCompte()" class="btn btn-primary">Modifier</button>
+                <button type="submit" ng-click="retourCompte()" class="btn btn-warning">Retour</button>
+            </div>
+
+            <div style="margin-top:20px;">
+                <button class="btn btn-danger" ng-click="supprimerCompteModal()">
+                    Supprimer complètement le compte
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

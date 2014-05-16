@@ -1,0 +1,102 @@
+<div ng-controller="InscriptionController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+
+
+    <form name="formInscription" class="container-fluid panel panel-default" role="form">
+
+        <div class="panel-heading">Inscrivez-vous à Cooparties !</div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Pseudo
+                        <input type="text" class="form-control" ng-model="pseudo" style="width:300px">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Nom
+                        <input type="text" class="form-control" ng-model="nom" style="width:300px">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Prénom
+                        <input type="text" class="form-control" ng-model="prenom" style="width:300px">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Mail
+                        <input type="text" class="form-control" ng-model="mail" style="width:300px">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Mot de passe
+                        <input type="text" class="form-control" ng-model="mdp" style="width:300px">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Confirmation mot de passe
+                        <input type="password" class="form-control" ng-model="mdpConfirmation" style="width:300px">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        Date de naissance
+                        <div>
+                            <input type="text" class="form-control" placeholder="Jour" ng-model="jourNaissance" style="width:55px; float:left; margin-right:10px;">
+                            <select ng-model="moisNaissance" class="form-control" style="width:45%; display:inline-block; float:left" ng-options="mois for mois in listeMois">
+                                <option value="">-- Mois --</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Année" ng-model="anneeNaissance" style="width:70px; float:left; margin-left:10px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div>Sexe</div>
+                        <select ng-model="moisNaissance" class="form-control" style="width:300px; display:inline-block;" ng-options="sexe for sexe in sexes">
+                            <option value="">Je suis...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <div>Avatar</div>
+                        <input type="file" class="fileupload" ng-file-select="onFileSelect($files)">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <input type="checkbox" name="checkboxCgu">&nbsp;Je certifie que je suis majeur et accepte les <a href="#">conditions générales</a> de Cooparties.
+                </div>
+                <button type="submit" ng-click="validerCompte()" class="btn btn-primary">Valider</button>
+                <button type="submit" ng-click="retourCompte()" class="btn btn-warning">Retour</button>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

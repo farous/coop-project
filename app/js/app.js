@@ -14,33 +14,33 @@ angular.module('myApp', [
   'ui.bootstrap',
   'angularFileUpload'
 ]).
-config(['$routeProvider',
+  config(['$routeProvider',
     function ($routeProvider) {
-        $routeProvider.when('/listeEvenements', {
-            templateUrl: 'partials/listeEvenements.html',
-            controller: 'MenuController'
-        });
-        $routeProvider.when('/mesEvenements', {
-            templateUrl: 'partials/mesEvenements.html',
-            controller: 'MesEvenementsController'
-        });
-        $routeProvider.when('/creerEvenement', {
-            templateUrl: 'partials/creerEvenement.html',
-            controller: 'CreerEvenementController'
-        });
-        $routeProvider.when('/compte', {
-            templateUrl: 'partials/compte.html',
-            controller: 'CompteController'
-        });
-        $routeProvider.when('/inscription', {
-            templateUrl: 'partials/inscription.html',
-            controller: 'InscriptionController'
-        });
-        $routeProvider.when('/detailEvtParticipant', {
-            templateUrl: 'partials/detailEvtParticipant.html',
-            controller: 'DetailEvtParticipantController'
-        });
-        $routeProvider.otherwise({
-            redirectTo: '/listeEvenements'
-        });
-}]);
+      $routeProvider.when('/listeEvenements', {
+        templateUrl: 'partials/listeEvenements.html',
+        controller: 'MenuController'
+      });
+      $routeProvider.when('/mesEvenements', {
+        templateUrl: 'partials/mesEvenements.html',
+        controller: 'MesEvenementsController'
+      });
+      $routeProvider.when('/creerEvenement', {
+        templateUrl: 'partials/creerEvenement.html',
+        controller: 'CreerEvenementController'
+      });
+      $routeProvider.when('/compte', {
+        templateUrl: 'partials/compte.html',
+        controller: 'CompteController'
+      });
+      $routeProvider.when('/inscription', {
+        templateUrl: 'partials/inscription.html',
+        controller: 'InscriptionController'
+      });
+      $routeProvider.when('/detailEvtParticipant', {
+        templateUrl: 'partials/detailEvtParticipant.html',
+        controller: 'DetailEvtParticipantController'
+      });
+      $routeProvider.otherwise({
+        redirectTo: '/listeEvenements'
+      });
+    }]);

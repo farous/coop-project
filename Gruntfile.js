@@ -58,7 +58,9 @@ grunt.initConfig({
         '.tmp/js/app.js': ['app/js/app.js']
       },
       options: {
-
+        bundleOptions: {
+          debug: true
+        }
       }
     }
   }
@@ -72,4 +74,4 @@ grunt.registerTask('default', [
     'watch'
   ]);
 
-}
+};

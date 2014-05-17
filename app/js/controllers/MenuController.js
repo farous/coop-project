@@ -1,14 +1,14 @@
 'use strict';
 
-module.exports =  function ($scope) {
+module.exports = function ($scope) {
 
   $scope.statutConnexion = "deconnecte";
 
   $scope.connexion = function (email, password) {
-      if (email === "toto") {
-        $scope.statutConnexion = "connecte";
-      }
-    };
+    if (email === "toto") {
+      $scope.statutConnexion = "connecte";
+    }
+  };
 
   $scope.deconnexion = function () {
     $scope.statutConnexion = "deconnecte";

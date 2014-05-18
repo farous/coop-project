@@ -11,6 +11,6 @@ module.exports = angular.module('evenements.controllers', [])
   .controller('ListeEvenementsController', ['$scope', 'EvenementService', listeEvenementController])
   .controller('CreerEvenementController', ['$scope', creerEvenementController])
   .controller('DetailEvtParticipantController', ['$scope', '$modal', '$log', detailEvtParticipantController])
-  .controller('MesEvenementsController', ['$scope', '$modal', '$log', mesEvenementsController])
+  .controller('MesEvenementsController', ['$scope', 'EvenementService', mesEvenementsController])
 
   .service('EvenementService', ['$http', evenementService]);

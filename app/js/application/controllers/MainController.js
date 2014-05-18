@@ -70,4 +70,4 @@ module.exports = function ($scope, $upload) {
      It could also be used to monitor the progress of a normal http post/put request with large data*/
     // $scope.upload = $upload.http({...})  see 88#issuecomment-31366487 for sample code.
   };
-}
+};

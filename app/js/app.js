@@ -10,7 +10,9 @@ require('./../bower_components/ng-file-upload/angular-file-upload');
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
-  require('./controllers').name,
+  require('./application').name,
+  require('./evenements').name,
+  require('./utilisateurs').name,
   'ui.bootstrap',
   'angularFileUpload'
 ]).

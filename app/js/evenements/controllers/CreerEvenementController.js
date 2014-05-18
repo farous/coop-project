@@ -8,4 +8,4 @@ module.exports = function ($scope) {
 
     $scope.opened = true;
   };
-}
+};

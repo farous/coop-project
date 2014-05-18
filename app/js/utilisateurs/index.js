@@ -1,7 +1,7 @@
 'use strict';
 
-var inscriptionController = require('./../utilisateurs/controllers/InscriptionController');
-var compteController = require('./../utilisateurs/controllers/CompteController');
+var inscriptionController = require('./controllers/InscriptionController');
+var compteController = require('./controllers/CompteController');
 
 module.exports = angular.module('utilisateurs.controllers', [])
   .controller('InscriptionController', ['$scope', inscriptionController])

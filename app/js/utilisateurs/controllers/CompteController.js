@@ -2,7 +2,7 @@
 
 module.exports = function ($scope, $modal, $log) {
 
-  $scope.supprimerCompteModal = function (size) {
+  $scope.demandeSupressionCompte = function (size) {
 
     var modalInstance = $modal.open({
       templateUrl: 'myModalContent.html',

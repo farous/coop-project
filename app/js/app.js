@@ -19,41 +19,40 @@ angular.module('myApp', [
   'angularFileUpload'
 ]).
   config(['$stateProvider', '$urlRouterProvider',
-    function ($stateProvider, $urlRouteProvider) {
+    function ($stateProvider, $urlRouterProvider) {
 
-      $urlRouteProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/listeEvenement');
 
       $stateProvider
         .state('listeEvenement', {
-          url: '/',
-          templateUrl: 'partials/listeEvenements.html'
-        });
+          url: '/listeEvenement',
+          templateUrl: 'partials/listeEvenements.html',
+          controller: 'ListeEvenementsController'
+        })
 
-      $routeProvider.when('/listeEvenements', {
-        templateUrl: 'partials/listeEvenements.html',
-        controller: 'MenuController'
-      });
-      $routeProvider.when('/mesEvenements', {
-        templateUrl: 'partials/mesEvenements.html',
-        controller: 'MesEvenementsController'
-      });
-      $routeProvider.when('/creerEvenement', {
-        templateUrl: 'partials/creerEvenement.html',
-        controller: 'CreerEvenementController'
-      });
-      $routeProvider.when('/compte', {
-        templateUrl: 'partials/compte.html',
-        controller: 'CompteController'
-      });
-      $routeProvider.when('/inscription', {
-        templateUrl: 'partials/inscription.html',
-        controller: 'InscriptionController'
-      });
-      $routeProvider.when('/detailEvtParticipant', {
-        templateUrl: 'partials/detailEvtParticipant.html',
-        controller: 'DetailEvtParticipantController'
-      });
-      $routeProvider.otherwise({
-        redirectTo: '/listeEvenements'
-      });
+        .state('compte', {
+          url: '/compte',
+          templateUrl: 'partials/compte.html',
+          controller: 'CompteController'
+        })
+        .state('mesEvenements', {
+          url: '/mesEvenements',
+          templateUrl: 'partials/mesEvenements.html',
+          controller: 'MesEvenementsController'
+        })
+        .state('creerEvenement', {
+          url: '/creerEvenement',
+          templateUrl: 'partials/creerEvenement.html',
+          controller: 'CreerEvenementController'
+        })
+        .state('inscription', {
+          url: '/inscription',
+          templateUrl: 'partials/inscription.html',
+          controller: 'InscriptionController'
+        })
+        .state('detailEvenementParticipant', {
+          url: 'detailEvenementParticipant',
+          templateUrl: 'partials/detailEvtParticipant.html',
+          controller: 'DetailEvtParticipantController'
+        });
     }]);

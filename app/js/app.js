@@ -2,6 +2,7 @@
 
 require('./../bower_components/angular/angular');
 require('./../bower_components/angular-route/angular-route');
+require('./../bower_components/angular-ui-router/release/angular-ui-router');
 require('./../bower_components/angular-bootstrap/ui-bootstrap');
 require('./../bower_components/angular-bootstrap/ui-bootstrap-tpls');
 require('./../bower_components/ng-file-upload/angular-file-upload');
@@ -10,14 +11,24 @@ require('./../bower_components/ng-file-upload/angular-file-upload');
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
+  'ui.router',
   require('./application').name,
   require('./evenements').name,
   require('./utilisateurs').name,
   'ui.bootstrap',
   'angularFileUpload'
 ]).
-  config(['$routeProvider',
-    function ($routeProvider) {
+  config(['$stateProvider', '$urlRouterProvider',
+    function ($stateProvider, $urlRouteProvider) {
+
+      $urlRouteProvider.otherwise('/');
+
+      $stateProvider
+        .state('listeEvenement', {
+          url: '/',
+          templateUrl: 'partials/listeEvenements.html'
+        });
+
       $routeProvider.when('/listeEvenements', {
         templateUrl: 'partials/listeEvenements.html',
         controller: 'MenuController'

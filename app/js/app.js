@@ -29,7 +29,6 @@ angular.module('myApp', [
           templateUrl: 'partials/listeEvenements.html',
           controller: 'ListeEvenementsController'
         })
-
         .state('compte', {
           url: '/compte',
           templateUrl: 'partials/compte.html',
@@ -51,7 +50,7 @@ angular.module('myApp', [
           controller: 'InscriptionController'
         })
         .state('detailEvenementParticipant', {
-          url: 'detailEvenementParticipant',
+          url: '/detailEvenementParticipant',
           templateUrl: 'partials/detailEvtParticipant.html',
           controller: 'DetailEvtParticipantController'
         });

@@ -5,7 +5,7 @@
         <div class="panel-body">
             <div class="row">
                 <div ng-repeat="event in evenementsParticipe" class="col-md-2" style="text-align: center; ">
-                    <a href="#/detailEvtParticipant" class="thumbnail" style="text-decoration:none; color:black;">
+                    <a ui-sref="detailEvenementParticipant" class="thumbnail" style="text-decoration:none; color:black;">
                         <img class="event-game-picture" src="{{event.gamepicture}}">
                         <label class="event-game-title" ng-bind="event.gametitle | uppercase"></label>
                         <div>
@@ -26,7 +26,7 @@
         <div class="panel-body">
             <div class="row">
                 <div ng-repeat="event in evenementsOrganise" class="col-md-2" style="text-align: center; ">
-                    <a href="#/detailEvtParticipant" class="thumbnail" style="text-decoration:none; color:black;">
+                    <a ui-sref="detailEvenementParticipant" class="thumbnail" style="text-decoration:none; color:black;">
                         <img class="event-game-picture" src="{{event.gamepicture}}">
                         <label class="event-game-title" ng-bind="event.gametitle | uppercase"></label>
                         <div>

@@ -1,4 +1,4 @@
-<div ng-controller="CompteController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+<div ng-controller="CompteController">
 
     <script type="text/ng-template" id="myModalContent.html">
         <div class = "modal-header">
@@ -21,22 +21,22 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        Pseudo
-                        <input type="text" class="form-control" ng-model="pseudo" style="width:300px">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" id="pseudo" class="form-control" ng-model="pseudo">
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Nom
-                        <input type="text" class="form-control" ng-model="nom" style="width:300px">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" class="form-control" ng-model="nom">
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Prénom
-                        <input type="text" class="form-control" ng-model="prenom" style="width:300px">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" class="form-control" ng-model="prenom">
                     </div>
                 </div>
             </div>
@@ -46,22 +46,22 @@
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Mail
-                        <input type="text" class="form-control" ng-model="mail" style="width:300px">
+                        <label for="mail">Mail</label>
+                        <input type="text" id="mail" class="form-control" ng-model="mail">
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Mot de passe
-                        <input type="text" class="form-control" ng-model="mdp" style="width:300px">
+                        <label for="mdp">Mot de passe</label>
+                        <input type="text" id="mdp" class="form-control" ng-model="mdp">
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="form-group">
-                        <div>Avatar</div>
-                        <input type="file" class="fileupload" ng-file-select="onFileSelect($files)">
+                        <label for="avatar">Avatar</label>
+                        <input type="file" id="avatar" class="fileupload" ng-file-select="onFileSelect($files)">
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 <button type="submit" ng-click="retourCompte()" class="btn btn-warning">Retour</button>
             </div>
 
-            <div style="margin-top:20px;">
+            <div>
                 <button class="btn btn-danger" ng-click="demandeSupressionCompte()">
                     Supprimer complètement le compte
                 </button>

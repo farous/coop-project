@@ -1,19 +1,19 @@
-<div ng-controller="MesEvenementsController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+<div ng-controller="MesEvenementsController">
 
     <div class="container-fluid panel panel-default">
         <div class="panel-heading"><h4>Evénements auxquels je participe</h4></div>
         <div class="panel-body">
             <div class="row">
-                <div ng-repeat="event in evenementsParticipe" class="col-md-2" style="text-align: center; ">
-                    <a ui-sref="detailEvenementParticipant" class="thumbnail" style="text-decoration:none; color:black;">
+                <div ng-repeat="event in evenementsParticipe" class="col-md-2">
+                    <a ui-sref="detailEvenementParticipant" class="thumbnail">
                         <img class="event-game-picture" src="{{event.gamepicture}}">
                         <label class="event-game-title" ng-bind="event.gametitle | uppercase"></label>
                         <div>
                             {{event.date}}
                         </div>
                         <div>
-                            <span style="margin-right:5px;">{{event.lieu}}</span>
-                            <span><i class="glyphicon glyphicon-user"></i></i><span class="event-participants-number" ng-bind="event.participants"></span></span>
+                            <span>{{event.lieu}}</span>
+                            <span><i class="glyphicon glyphicon-user"></i><span class="event-participants-number" ng-bind="event.participants"></span></span>
                         </div>
                     </a>
                 </div>
@@ -25,16 +25,16 @@
         <div class="panel-heading"><h4>Evénements que j'organise</h4></div>
         <div class="panel-body">
             <div class="row">
-                <div ng-repeat="event in evenementsOrganise" class="col-md-2" style="text-align: center; ">
-                    <a ui-sref="detailEvenementParticipant" class="thumbnail" style="text-decoration:none; color:black;">
+                <div ng-repeat="event in evenementsOrganise" class="col-md-2">
+                    <a ui-sref="detailEvenementParticipant" class="thumbnail" >
                         <img class="event-game-picture" src="{{event.gamepicture}}">
                         <label class="event-game-title" ng-bind="event.gametitle | uppercase"></label>
                         <div>
                             {{event.date}}
                         </div>
                         <div>
-                            <span style="margin-right:5px;">{{event.lieu}}</span>
-                            <span><i class="glyphicon glyphicon-user"></i></i><span class="event-participants-number" ng-bind="event.participants"></span></span>
+                            <span>{{event.lieu}}</span>
+                            <span><i class="glyphicon glyphicon-user"></i><span class="event-participants-number" ng-bind="event.participants"></span></span>
                         </div>
                     </a>
                 </div>

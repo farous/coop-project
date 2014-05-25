@@ -1,4 +1,4 @@
-<div ng-controller="CreerEvenementController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+<div ng-controller="CreerEvenementController">
 
     <form name="formCreerEvenement" role="form">
 
@@ -8,9 +8,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            Type de jeu
-                            <select ng-model="typeDeJeu" class=
-                                    style="width:300px" ng-options="typeJeu for typeJeu in typesDeJeu">
+                            <label for="type-jeu">Type de jeu</label>
+                            <select id="type-jeu" ng-model="typeDeJeu" ng-options="typeJeu for typeJeu in typesDeJeu">
                                 <option value="">-- Choix du Type --</option>
                             </select>
                         </div>
@@ -18,8 +17,8 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            Nom du jeu
-                            <input type="text" class="form-control" ng-model="nomJeu" style="width:300px">
+                            <label for="nom-jeu">Nom du jeu</label>
+                            <input type="text" id="nom-jeu" class="form-control" ng-model="nomJeu">
                         </div>
                     </div>
                 </div>
@@ -32,47 +31,42 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            Adresse de l'événement
-                            <input type="text" class="form-control" ng-model="adresseEvenement" style="width:300px">
+                            <label for="adresse">Adresse de l'événement</label>
+                            <input type="text" id="adresse" class="form-control" ng-model="adresseEvenement">
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            Code postal
-                            <input type="number" class="form-control" ng-model="codePostalEvenement" style="width:300px" ng-minlength="5" ng-maxlength="5">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            Ville
-                            <input type="text" class="form-control" ng-model="villeEvenement" style="width:300px">
+                            <!-- TODO CODE postal plus ville widget -->
+                            <label for="code-postal">Code postal</label>
+                            <input type="number" id="code-postal" class="form-control" ng-model="codePostalEvenement" ng-minlength="5" ng-maxlength="5">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <p style="margin-bottom:0px;">Date</p>
-                            <p class="input-group" style="display:inline-block; float:left;">
-                                <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Fermer" />
-                                <div class="input-group-btn" style="float:left;">
+                            <label for="date">Date</label>
+                            <div class="input-group">
+                                <input type="text" id="date" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Fermer" />
+                                <div class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i>
                                     </button>
                                 </div>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group" style="clear:both;">
-                            Nombre de tous les participants (en vous comptant)
-                            <input type="number" class="form-control" ng-model="nbParticipants" style="width:300px" ng-min="1" ng-max="5000">
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            Support
-                            <select ng-model="support" class="form-control" style="width:300px" ng-options="support for support in supports">
+                            <label for="nombre-participant">Nombre maximal de participants (en vous comptant)</label>
+                            <input type="number" id="nombre-participant" class="form-control" ng-model="nbParticipants" ng-min="1" ng-max="5000">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="support">Support</label>
+                            <select id="support" class="form-control" ng-model="support" ng-options="support for support in supports">
                                 <option value="">-- Choix du support --</option>
                             </select>
                         </div>
@@ -81,8 +75,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            Détail
-                            <textarea ng-model="detailsCreerEvenement" style="width:100%; height:121px" placeholder="Saisissez ici toute information complémentaire, exemple : merci de ramener une manette supplémentaire etc..."></textarea>
+                            <label for="detail">Détail</label>
+                            <textarea id="detail" placeholder="Saisissez ici toute information complémentaire, exemple : merci de ramener une manette supplémentaire etc..." ng-model="detailsCreerEvenement" ></textarea>
                         </div>
                     </div>
                 </div>

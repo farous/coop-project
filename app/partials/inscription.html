@@ -1,4 +1,4 @@
-<div ng-controller="InscriptionController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+<div ng-controller="InscriptionController">
 
 
     <form name="formInscription" class="container-fluid panel panel-default" role="form">
@@ -9,46 +9,22 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        Pseudo
-                        <input type="text" class="form-control" ng-model="pseudo" style="width:300px">
+                        <label for="pseudo" >Pseudo</label>
+                        <input type="text" id="pseudo" class="form-control" ng-model="pseudo">
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Nom
-                        <input type="text" class="form-control" ng-model="nom" style="width:300px">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" class="form-control" ng-model="nom">
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Prénom
-                        <input type="text" class="form-control" ng-model="prenom" style="width:300px">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-
-                <div class="col-md-4">
-                    <div class="form-group">
-                        Mail
-                        <input type="text" class="form-control" ng-model="mail" style="width:300px">
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="form-group">
-                        Mot de passe
-                        <input type="text" class="form-control" ng-model="mdp" style="width:300px">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        Confirmation mot de passe
-                        <input type="password" class="form-control" ng-model="mdpConfirmation" style="width:300px">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" class="form-control" ng-model="prenom">
                     </div>
                 </div>
             </div>
@@ -58,21 +34,46 @@
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        Date de naissance
+                        <label for="mail">Mail</label>
+                        <input type="text" id="mail" class="form-control" ng-model="mail">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe</label>
+                        <input type="text" id="mdp" class="form-control" ng-model="mdp">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="confirmation-mdp">Confirmation mot de passe</label>
+                        <input type="password" id="confirmation-mdp" class="form-control" ng-model="mdpConfirmation">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <!-- TODO foutre un calendar -->
+                        <label>Date de naissance</label>
                         <div>
-                            <input type="text" class="form-control" placeholder="Jour" ng-model="jourNaissance" style="width:55px; float:left; margin-right:10px;">
-                            <select ng-model="moisNaissance" class="form-control" style="width:45%; display:inline-block; float:left" ng-options="mois for mois in listeMois">
+                            <input type="text" class="form-control" placeholder="Jour" ng-model="jourNaissance">
+                            <select ng-model="moisNaissance" class="form-control" ng-options="mois for mois in listeMois">
                                 <option value="">-- Mois --</option>
                             </select>
-                            <input type="text" class="form-control" placeholder="Année" ng-model="anneeNaissance" style="width:70px; float:left; margin-left:10px;">
+                            <input type="text" class="form-control" placeholder="Année" ng-model="anneeNaissance">
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        <div>Sexe</div>
-                        <select ng-model="moisNaissance" class="form-control" style="width:300px; display:inline-block;" ng-options="sexe for sexe in sexes">
+                        <label for="sexe">Sexe</label>
+                        <select id="sexe" class="form-control" ng-model="moisNaissance"  ng-options="sexe for sexe in sexes">
                             <option value="">Je suis...</option>
                         </select>
                     </div>
@@ -80,8 +81,8 @@
                 
                  <div class="col-md-4">
                     <div class="form-group">
-                        <div>Avatar</div>
-                        <input type="file" class="fileupload" ng-file-select="onFileSelect($files)">
+                        <label for="avatar">Avatar</label>
+                        <input type="file" id="avatar" class="fileupload" ng-file-select="onFileSelect($files)">
                     </div>
                 </div>
                 
@@ -89,7 +90,9 @@
 
             <div>
                 <div class="form-group">
-                    <input type="checkbox" name="checkboxCgu">&nbsp;Je certifie que je suis majeur et accepte les <a>conditions générales</a> de Cooparties.
+                    <label>
+                        <input type="checkbox" name="checkboxCgu">&nbsp;Je certifie que je suis majeur et accepte les <a>conditions générales</a> de Cooparties.
+                    </label>
                 </div>
                 <button type="submit" ng-click="validerCompte()" class="btn btn-primary">Valider</button>
                 <button type="submit" ng-click="retourCompte()" class="btn btn-warning">Retour</button>

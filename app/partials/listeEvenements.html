@@ -1,45 +1,37 @@
-<div ng-controller="ListeEvenementsController" style="width: 70%; margin: 0px auto 0px auto; margin-top: 30px;">
+<div ng-controller="ListeEvenementsController">
 
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Rechercher un événement</h3>
         </div>
 
-        <div class="panel-content" style="margin-top : 20px;">
+        <div class="panel-content">
 
             <div class="container-fluid">
                 <div class="row">
 
                     <div class="col-md-3">
-                        <span style="margin-left:5px;margin-right:5px;">Nom du jeu</span>
-                        <input type="text" class="form-control" ng-model="nom" style="width:60%; display:inline-block;">
+                        <label for="nom-jeu">Nom du jeu</label>
+                        <input type="text" id="nom-jeu" class="form-control" ng-model="nom">
                     </div>
-                    <div class="col-md-3" style="text-align:center; ">
-                        <span style="margin-right:5px;">Type de jeu</span>
-                        <select ng-model="typeDeJeu" class="form-control" style="width:65%; display:inline-block;" ng-options="typeJeu for typeJeu in typesDeJeu">
+                    <div class="col-md-3">
+                        <label for="type-jeu">Type de jeu</label>
+                        <select id="type-jeu" class="form-control" ng-model="typeDeJeu"  ng-options="typeJeu for typeJeu in typesDeJeu">
                             <option value="">-- Choix du Type --</option>
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <span style="margin-left:5px;margin-right:5px;">Code postal</span>
-                        <input type="number" class="form-control" ng-model="codePostal" style="width:60%; display:inline-block;" ng-minlength="5" ng-maxlength="5">
+                        <label for="code-postal">Code postal</label>
+                        <input type="number" id="code-postal" class="form-control" ng-model="codePostal" ng-minlength="5" ng-maxlength="5">
                     </div>
                     <div class="col-md-3">
-                        <span style="margin-left:5px; margin-right:5px; margin-top:5px; float:left;">Date</span>
-                        <p class="input-group" style="width:60%; display:inline-block; float:left;">
-                            <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Fermer" />
-                            <div class="input-group-btn" style="float:left;">
-                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i>
-                                </button>
-                            </div>
-                        </p>
+                        <!-- TODO date range -->
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <div class="panel-footer" style="text-align:right;">
+        <div class="panel-footer">
             <button type="button" class="btn btn-warning" ng-click="recherche()">
                  <span class="glyphicon glyphicon-search"></span>&nbsp;Rechercher
             </button>
@@ -48,22 +40,20 @@
 
     <div class="row">
 
-        <div ng-repeat="event in evenements" class="col-md-2" style="text-align: center">
-            <a class="thumbnail" style="text-decoration:none; color:black;">
+        <div ng-repeat="event in evenements" class="col-md-2">
+            <a class="thumbnail">
                 <img class="event-game-picture" src="{{event.gamepicture}}">
                 <label class="event-game-title" ng-bind="event.gametitle | uppercase"></label>
                 <div>
                     {{event.date}}
                 </div>
                 <div>
-                    <span style="margin-right:5px;">{{event.lieu}}</span>
-                    <span><i class="glyphicon glyphicon-user"></i></i><span class="event-participants-number" ng-bind="event.participants"></span></span>
+                    <span>{{event.lieu}}</span>
+                    <span><i class="glyphicon glyphicon-user"></i><span class="event-participants-number" ng-bind="event.participants"></span></span>
                 </div>
             </a>
         </div>
 
-        <div>
-
-        </div>
-
     </div>
+
+</div>
